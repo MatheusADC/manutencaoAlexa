@@ -2,7 +2,7 @@ const Alexa = require('ask-sdk-core');
 const AWS = require('aws-sdk');
 const ddbAdapter = require('ask-sdk-dynamodb-persistence-adapter');
 const axios = require('axios');
-const tokenId = "f6a474e6fa3d77da3003ddf9929910cf2d11bb62a1b5f09150b7c79c27fa8dc50d9d65ccd9cee421";
+const tokenId = "YOUR_TOKEN_ID";
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {

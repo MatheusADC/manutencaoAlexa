@@ -1,0 +1,627 @@
+{
+  "interactionModel": {
+    "dialog": {
+      "intents": [
+        {
+          "slots": [
+            {
+              "name": "nomeProduto",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1023834801114.629899846740"
+              }
+            },
+            {
+              "name": "identificacao",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.891411176185.990200031201"
+              }
+            },
+            {
+              "name": "status",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1370922229184.1524527941498"
+              }
+            },
+            {
+              "name": "data",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1370922229184.455823830911"
+              }
+            },
+            {
+              "name": "preco",
+              "elicitationRequired": true,
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1023834801114.79623799581"
+              }
+            },
+            {
+              "name": "nomeCliente",
+              "elicitationRequired": true,
+              "type": "AMAZON.FirstName",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1023834801114.1029486007088"
+              }
+            },
+            {
+              "name": "telefoneCliente",
+              "elicitationRequired": true,
+              "type": "AMAZON.PhoneNumber",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.183268621236.1265645784300"
+              }
+            }
+          ],
+          "name": "CadastrarProdutoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1370922229184"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1211752374929.1679257120683"
+              }
+            }
+          ],
+          "name": "ConsultarProdutoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.534357107483"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.592707194115.143120431770"
+              }
+            }
+          ],
+          "name": "RemoverProdutoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.16937521592"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.983772578304.617753358312"
+              }
+            },
+            {
+              "name": "status",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1566850326523.1084025333215"
+              }
+            }
+          ],
+          "name": "AlterarStatusProdutoIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.983772578304"
+          }
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "elicitationRequired": true,
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1347643500848.513255212163"
+              }
+            }
+          ],
+          "name": "EnviarZapIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1347643500848"
+          }
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "languageModel": {
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "slots": [
+            {
+              "name": "nomeProduto",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "identificacao",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "status",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "data",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "preco",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "nomeCliente",
+              "type": "AMAZON.FirstName"
+            },
+            {
+              "name": "telefoneCliente",
+              "type": "AMAZON.PhoneNumber"
+            }
+          ],
+          "name": "CadastrarProdutoIntent",
+          "samples": [
+            "Cadastrar produto"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "ConsultarProdutoIntent",
+          "samples": [
+            "Consultar produto com id {identificacao}"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "RemoverProdutoIntent",
+          "samples": [
+            "Remover produto com id {identificacao}",
+            "Remover produto"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "type": "AMAZON.SearchQuery"
+            },
+            {
+              "name": "status",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "AlterarStatusProdutoIntent",
+          "samples": [
+            "Alterar status",
+            "Alterar produto"
+          ]
+        },
+        {
+          "slots": [
+            {
+              "name": "identificacao",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "name": "EnviarZapIntent",
+          "samples": [
+            "Enviar mensagem"
+          ]
+        }
+      ],
+      "types": [],
+      "invocationName": "início manutenção"
+    },
+    "prompts": [
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o produto e o ID a ser cadastrado?"
+          }
+        ],
+        "id": "Elicit.Slot.1123603546288.1246878922038"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma que o produto é {nome_produto} com ID {id} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1123603546288"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o produto e ID a ser cadastrado?"
+          }
+        ],
+        "id": "Elicit.Slot.1123603546288.1442518046598"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma que o produto é {nome_produto} com ID {id} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1390117809088"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto a ser retirado?"
+          }
+        ],
+        "id": "Elicit.Slot.1390117809088.143169611275"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto a ser retirado?"
+          }
+        ],
+        "id": "Elicit.Slot.1254647471295.872990053189"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma que o produto {nome_produto} possui o ID {id} ?"
+          }
+        ],
+        "id": "Confirm.Intent.327130272659"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto {nome_produto} que sofreu reparo?"
+          }
+        ],
+        "id": "Elicit.Slot.327130272659.1453140082859"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto {nome_produto} que sofreu reparo?"
+          }
+        ],
+        "id": "Elicit.Slot.327130272659.375746360075"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma o produto {nome_produto} com o defeito {defeito} ?"
+          }
+        ],
+        "id": "Confirm.Intent.602701356839"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o defeito desse produto?"
+          }
+        ],
+        "id": "Elicit.Slot.602701356839.781166046097"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o defeito desse produto?"
+          }
+        ],
+        "id": "Elicit.Slot.602701356839.1496951566396"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o material usado para o reparo?"
+          }
+        ],
+        "id": "Elicit.Slot.1684615711503.807386491755"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o material usado para o reparo?"
+          }
+        ],
+        "id": "Elicit.Slot.1684615711503.1018522758427"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma o produto {nome_produto} reparado com o material {material} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1684615711503"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma o cadastro do produto {nomeProduto} com ID {identificacao} no valor de {preco} reais e com o status {status} na data {data} para o cliente {nomeCliente}  com telefone para contato {telefoneCliente} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1370922229184"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o status do produto?"
+          }
+        ],
+        "id": "Elicit.Slot.1370922229184.1524527941498"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é a data de recebimento do produto?"
+          }
+        ],
+        "id": "Elicit.Slot.1370922229184.455823830911"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você quer consultar o produto com o id {identificacao} ?"
+          }
+        ],
+        "id": "Confirm.Intent.534357107483"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma a criação de um lembrete diário às {hora} e {minuto} com a mensagem {mensagem} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1131440360730"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é a mensagem do lembrete?"
+          }
+        ],
+        "id": "Elicit.Slot.1131440360730.585448432612"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual a hora do lembrete?"
+          }
+        ],
+        "id": "Elicit.Slot.1131440360730.1607757240899"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o minuto do lembrete?"
+          }
+        ],
+        "id": "Elicit.Slot.1131440360730.541434289510"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você deseja remover o produto com id {identificacao} ?"
+          }
+        ],
+        "id": "Confirm.Intent.16937521592"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o nome do produto?"
+          }
+        ],
+        "id": "Elicit.Slot.1023834801114.629899846740"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o nome do cliente?"
+          }
+        ],
+        "id": "Elicit.Slot.1023834801114.1029486007088"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o valor do reparo?"
+          }
+        ],
+        "id": "Elicit.Slot.1023834801114.79623799581"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto?"
+          }
+        ],
+        "id": "Elicit.Slot.891411176185.990200031201"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto a ser consultado?"
+          }
+        ],
+        "id": "Elicit.Slot.1211752374929.1679257120683"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o id do produto a ser removido?"
+          }
+        ],
+        "id": "Elicit.Slot.592707194115.143120431770"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual o ID do produto que terá o seu status alterado?"
+          }
+        ],
+        "id": "Elicit.Slot.983772578304.617753358312"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma a alteração do produto com ID {identificacao} para o status {status} ?"
+          }
+        ],
+        "id": "Confirm.Intent.983772578304"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o novo status do produto com ID {identificacao} ?"
+          }
+        ],
+        "id": "Elicit.Slot.1566850326523.1084025333215"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o ID do produto consertado ?"
+          }
+        ],
+        "id": "Elicit.Slot.1510149903285.222110394513"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma o envio do email de produto consertado para o cliente do produto com id {identificacao} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1510149903285"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o e-mail?"
+          }
+        ],
+        "id": "Elicit.Slot.782065767368.1695653119195"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o telefone para contato do cliente?"
+          }
+        ],
+        "id": "Elicit.Slot.183268621236.1265645784300"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Qual é o id do produto?"
+          }
+        ],
+        "id": "Elicit.Slot.1347643500848.513255212163"
+      },
+      {
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Você confirma o envio da mensagem de produto consertado para o cliente dono do produto de id {identificacao} ?"
+          }
+        ],
+        "id": "Confirm.Intent.1347643500848"
+      }
+    ]
+  }
+}

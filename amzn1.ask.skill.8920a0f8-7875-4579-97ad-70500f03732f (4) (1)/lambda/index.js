@@ -26,40 +26,57 @@ const CadastrarProdutoIntentHandler = {
     async handle(handlerInput) {
         var nomeProduto = Alexa.getSlotValue(handlerInput.requestEnvelope, 'nomeProduto');
         var preco = Alexa.getSlotValue(handlerInput.requestEnvelope, 'preco');
-        var precoDecimal = parseFloat(preco.replace(',', '.'));
         var nomeCliente = Alexa.getSlotValue(handlerInput.requestEnvelope, 'nomeCliente');
         var telefoneCliente = Alexa.getSlotValue(handlerInput.requestEnvelope, 'telefoneCliente');
         var id = Alexa.getSlotValue(handlerInput.requestEnvelope, 'identificacao');
         var status = Alexa.getSlotValue(handlerInput.requestEnvelope, 'status');
         var data = Alexa.getSlotValue(handlerInput.requestEnvelope, 'data');
-        
+        var confirmacao = Alexa.getSlotValue(handlerInput.requestEnvelope, 'confirmacao');
+
         var produto = {
             'nomeProduto': nomeProduto,
-            'preco': precoDecimal,
+            'preco': preco,
             'nomeCliente': nomeCliente,
             'telefoneCliente': telefoneCliente,
             'id': id,
             'status': status,
             'data': data
         };
-        
+
         var dados = await handlerInput.attributesManager.getPersistentAttributes();
-        
-        if(Array.isArray(dados)){
-            dados.push(produto);
+
+        if (Array.isArray(dados)) {
+            var idExistente = dados.some(item => item.id === id);
+            if (idExistente) {
+                const speakOutput = 'Esse ID já foi utilizado. Por favor, forneça um ID diferente.';
+                return handlerInput.responseBuilder
+                    .speak(speakOutput)
+                    .reprompt(speakOutput)
+                    .getResponse();
+            } else {
+                dados.push(produto);
+            }
         } else {
-            dados = [ produto ];
+            dados = [produto];
         }
-        
-        handlerInput.attributesManager.setPersistentAttributes(dados);
-        await handlerInput.attributesManager.savePersistentAttributes();
-        
-        const speakOutput = 'O produto foi cadastrado com sucesso!';
-        
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
+
+        if (confirmacao === 'não' || confirmacao === 'nao') {
+            const speakOutput = 'O produto não foi cadastrado.';
+            return handlerInput.responseBuilder
+                .speak(speakOutput)
+                .reprompt(speakOutput)
+                .getResponse();
+        } else {
+            handlerInput.attributesManager.setPersistentAttributes(dados);
+            await handlerInput.attributesManager.savePersistentAttributes();
+
+            const speakOutputSuccess = 'O produto foi cadastrado com sucesso!';
+
+            return handlerInput.responseBuilder
+                .speak(speakOutputSuccess)
+                .reprompt(speakOutputSuccess)
+                .getResponse();
+        }
     }
 };
 

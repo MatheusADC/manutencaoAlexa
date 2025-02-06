@@ -1,7 +1,7 @@
 # <img src="https://github.com/user-attachments/assets/caabfdf0-0f9e-44a3-8200-c6579fe87887" alt="description icon" width="28"> Description
 Alexa Skill Project for an Electronics Repair Service. The language used was JavaScript. The chosen database was DynamoDB, a NoSQL key-value database.
 
-# <img src="https://github.com/user-attachments/assets/fe2e7495-1a3e-4c8b-8d9d-d85e94b7de1d" alt="Alexa icon" width="26"> Skills
+# <img src="https://github.com/user-attachments/assets/fe2e7495-1a3e-4c8b-8d9d-d85e94b7de1d" alt="JS icon" width="26"> Skills
 ![image](https://github.com/user-attachments/assets/235d9714-a3b4-4e68-b770-ff4860b13d46)
 
 ### 1º Skill - CadastrarProdutoIntent
